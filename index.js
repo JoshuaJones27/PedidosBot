@@ -7,7 +7,7 @@ const token = '6219107157:AAF1g0_xh4dwVlPYxkS2sii8mDwybDygqAQ'
 const openWeatherMapApiKey = 'dd5f07f6b080a8308ea71e6a6a813cd6'
 
 // Create a bot instance
-const bot = new TelegramBot(token, { polling: true })
+const bot = new TelegramBot(token)
 
 const menuOptions = {
     reply_markup: {
