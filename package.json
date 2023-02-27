@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0",
+    "telegraf": "^4.11.2"
+  },
+  "name": "pedidosbot",
+  "version": "1.0.0",
+  "main": "import.js",
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
