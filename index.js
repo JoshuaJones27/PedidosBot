@@ -1,8 +1,7 @@
 require('dotenv').config()
 
 const TelegramBot = require('node-telegram-bot-api')
-
-const fetch = require('node-fetch')
+const axios = require('axios')
 
 // Create a bot instance
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true })
@@ -61,10 +60,10 @@ bot.onText(/\/weather/, async (msg) => {
   
     // Fetch the weather information for the location from the OpenWeatherMap API
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&units=metric`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const response = await axios.get(url);
+    const data = response.data;
   
-    if (response.ok) {
+    if (response.status === 200) {
       // Send the weather information to the user
       const location = `${data.name}, ${data.sys.country}`;
       const weatherDescription = data.weather[0].description;
